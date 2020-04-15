@@ -1,269 +1,317 @@
 /* Custom properties/variables  */
 :root {
-  --primary-color: #134153;
-  --secondary-color: #8AD8ED;
-  --third-color: #FCFAF1;
-  --fourth-color: #2E828B;
-  --fifth-color: #902E2E;
-  --sixth-color: #254A5D;
+	--primary-color: #134153;
+	--secondary-color: #8ad8ed;
+	--third-color: #fcfaf1;
+	--fourth-color: #2e828b;
+	--fifth-color: #902e2e;
+	--sixth-color: #254a5d;
 }
 
 /* Base reset */
 * {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
 }
 
-html, body {
-  width: 100%;
+html,
+body {
+	width: 100%;
 }
 
 html {
-  scroll-behavior: smooth;
-  box-sizing: border-box;
+	scroll-behavior: smooth;
+	box-sizing: border-box;
 }
 
 /* box-sizing and font sizing */
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
+	box-sizing: inherit;
 }
 
 :target::before {
-  content: '';
-  display: block;
-  height: -40px;
-  margin: 40px 0;
+	content: "";
+	display: block;
+	height: -40px;
+	margin: 40px 0;
 }
 
+/* container */
 #main {
-  max-width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
+	max-width: 100%;
+	height: auto;
+	display: flex;
+	flex-direction: column;
 }
 
+/* header */
 #header {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  background-color: var(--primary-color);
-  top: 0;
-  z-index: 2;
-  position: fixed;
+	width: 100%;
+	background-color: var(--primary-color);
+	top: 0;
+	position: fixed;
 }
 
-#header img {
-  margin-left: 15px;
-}
-
-#header h3 {
-  color: var(--secondary-color);
-  font-size: 24px;
-  margin-left: 25px;
-}
-
+/* navigation bar */
 #navbar {
-  width: 95%;
+	width: 100%;
 }
 
 #navbar ul {
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  list-style: none;
-  font-size: 18px;
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	justify-content: center;
+	list-style: none;
+	font-size: 18px;
+	position: relative;
+}
+
+#navbar ul li {
+	margin: 0 25px;
+	padding: 18px 0;
+	width: 100px;
 }
 
 #navbar ul li a {
-  display: block;
-  padding: 18px;
+	display: block;
 }
 
-#navbar ul li a:link, #navbar ul li a:visited
-{
-  text-decoration: none;
-  color: var(--secondary-color);
+#navbar ul li a::before {
+	content: "";
+	background-color: var(--secondary-color);
+	height: 2px;
+	display: block;
+	width: 0px;
+	transition: width 0.5s;
+	margin-left: -15px;
+	position: absolute;
+	top: 45px;
 }
 
-#navbar ul li a:hover, a:active {
-  background-color: var(--sixth-color);
+#navbar ul li a:hover::before {
+	width: 80px;
 }
 
+#navbar ul li a:link,
+#navbar ul li a:visited {
+	text-decoration: none;
+	color: var(--secondary-color);
+}
+
+/* banner */
 #welcome-section {
-  width: 100vw;
-  height: 75vh;
-  background-color: var(--secondary-color);
-  color: var(--primary-color);
-  display: flex;
-  margin-top: 50px;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+	width: 100vw;
+	height: 75vh;
+	background-color: var(--secondary-color);
+	color: var(--primary-color);
+	display: flex;
+	margin-top: 50px;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 #welcome-section h1 {
-  margin-bottom: 1%;
-  font-size: 34px;
+	margin-bottom: 1%;
+	font-size: 34px;
 }
 
 #welcome-section p {
-  font-size: 18px;
+	font-size: 18px;
 }
 
-#section {
-  z-index: 1;
+/* profil, porjects, skills section */
+#profile,
+#projects,
+#skills {
+	padding: 35px 25px 35px 25px;
+	color: var(--third-color);
 }
 
-#profile, #projects, #skills {
-  padding: 35px 25px 35px 25px;
-  color: var(--third-color);
+/* set profile and skills section background */
+#profile,
+#skills {
+	background-color: var(--fourth-color);
 }
 
-#profile, #skills {
-  background-color: var(--fourth-color);
+#profile-link a:link,
+#profile-link a:visited {
+	color: var(--third-color);
 }
 
+#profile-link a:hover,
+#profile-link a:active {
+	color: var(--secondary-color);
+}
+
+/* set projects section background */
 #projects {
-  background-color: var(--primary-color);
+	background-color: var(--primary-color);
 }
 
-#projects h1, #profile h1, #skills h1 {
-  font-size: 28px;
-  margin-bottom: 15px;
-  text-align: center;
+/* projects, profile, skills section title */
+#projects h1,
+#profile h1,
+#skills h1 {
+	font-size: 28px;
+	margin-bottom: 15px;
+	text-align: center;
 }
 
-#projects p, #profile p {
-  text-align: center;
+#projects p,
+#profile p {
+	text-align: center;
 }
 
 #box-pro {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin-top: 25px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	margin-top: 25px;
 }
 
-#box-pro .project {
-  margin-bottom: 15px;
-  display:flex;
-  flex-direction: column;
+#box-pro .project-tile {
+	margin: 0 15px 15px 15px;
+	display: flex;
+	flex-direction: column;
 }
 
-#box-pro .project img {
-  margin-bottom: 10px;
+@media screen and (max-width: 500px) {
+	#box-pro .project-tile {
+		margin-bottom: 25px;
+	}
 }
 
-#box-pro .project a:link, #box-pro .project a:visited {
-  display: block;
-  border-radius: 5px;
-  width: 70%;
-  background-color: var(--fourth-color);
-  color: var(--third-color);
-  text-decoration: none;
-  padding: 10px;
-  text-align: center;
-  margin: auto;
+/* projects link */
+#box-pro .project-tile a {
+	transition: letter-spacing 1s;
 }
 
-#box-pro .project a:hover, #box-pro .project a:active {
-  opacity: 0.7;
+#box-pro .project-tile a:link,
+#box-pro .project-tile a:visited {
+	display: block;
+	border-radius: 5px;
+	width: 100%;
+	background-color: var(--fourth-color);
+	color: var(--third-color);
+	text-decoration: none;
+	padding: 10px;
+	text-align: center;
+	margin: auto;
 }
 
-.project img {
-  border-radius: 5px;
+#box-pro .project-tile a:hover,
+#box-pro .project-tile a:active {
+	opacity: 0.7;
+	letter-spacing: 3px;
 }
 
 .skill-img {
-  width : 100px;
+	width: 100px;
 }
 
 .my-skill {
-  display:flex;
-  flex-direction: row;
-  flex-wrap:wrap;
-  justify-content: space-around;
-  margin: 20px 0;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	margin: 20px 0;
 }
 
 .my-skill .skill {
-  text-align: center;
-  margin-bottom: 15px;
+	text-align: center;
+	margin-bottom: 15px;
 }
 
 .my-skill .skill p {
-  font-size: 18px;
+	font-size: 18px;
 }
 
+/* footer */
 #footer {
-  background-color: var(--primary-color);
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  padding-top: 25px;
-  padding-bottom: 25px;
+	background-color: var(--primary-color);
+	width: 100%;
+	height: auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	padding-top: 25px;
+	padding-bottom: 25px;
 }
 
-.contact {
-  margin-left: 15px;
+@media screen and (max-width: 500px) {
+	#footer {
+		flex-direction: column;
+	}
 }
 
-.contact h3, .socmed h3 {
-  margin-bottom: 15px;
-  font-size: 22px;
-  color: var(--secondary-color);
+.contact,
+.socmed {
+	margin: 0 15px;
+}
+
+.contact h3,
+.socmed h3 {
+	margin-bottom: 15px;
+	font-size: 22px;
+	color: var(--secondary-color);
 }
 
 .contact p {
-  color: var(--secondary-color);
+	color: var(--secondary-color);
 }
 
 .contact .p-foot {
-  margin-top: 5px;
-  color: var(--secondary-color);
+	margin-top: 5px;
+	color: var(--secondary-color);
 }
 
 .socmed {
-  margin-bottom: 15px;
+	margin-bottom: 15px;
 }
 
 .socmed p {
-  display:flex;
-  flex-direction: row;
-  margin-bottom: 5px;
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 5px;
 }
 
 .socmed-img {
-  width: 20px;
-  display: block;
-  margin-right: 10px;
+	width: 20px;
+	display: block;
+	margin-right: 10px;
 }
 
-.socmed a {
-  color: var(--secondary-color);
-  text-decoration: none;
+.socmed a:link,
+.socmed a:visited {
+	color: var(--secondary-color);
+	text-decoration: none;
+}
+
+.socmed a:hover,
+.socmed a:active {
+	text-decoration: underline;
 }
 
 .line {
-  width: 100%;
-  height: 3px;
-  background-color: var(--secondary-color);
+	width: 100%;
+	height: 3px;
+	background-color: var(--secondary-color);
 }
 
+/* copyright */
 .credit {
-  width: 100%;
-  padding: 20px;
-  background-color: var(--primary-color);
+	width: 100%;
+	padding: 20px;
+	background-color: var(--primary-color);
 }
 
 .credit p {
-  color: var(--secondary-color);
-  text-align: center;
+	color: var(--secondary-color);
+	text-align: center;
 }
